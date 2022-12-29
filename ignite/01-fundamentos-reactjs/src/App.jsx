@@ -16,7 +16,11 @@ export function App() {
           <Post
             author="Igor Ramos"
             content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, earum nulla incidunt fugit nemo quam nostrum eveniet explicabo voluptatem facilis, assumenda suscipit doloremque cum dicta culpa omnis modi inventore ex!"
-        />
+          />
+          <Post
+            author="Igor Ramos"
+            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, earum nulla incidunt fugit nemo quam nostrum eveniet explicabo voluptatem facilis, assumenda suscipit doloremque cum dicta culpa omnis modi inventore ex!"
+          />
         </main>
       </div>
     </div>
