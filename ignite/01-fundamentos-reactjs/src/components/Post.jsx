@@ -15,9 +15,10 @@ export function Post({ author, publishedAt, content }) {
   // }).format(publishedAt)
 
   const [comments, setComments] = useState([
-    1,
-    2
+    'Post muito bacana!!'
   ])
+
+  const [newCommentText, setNewCommentText] = useState([''])
 
   // Estado são variáveis que eu quero que o componente monitore
 
@@ -33,10 +34,15 @@ export function Post({ author, publishedAt, content }) {
   function handleCreateNewComment() {
     event.preventDefault()
 
-    // Imutabilidade
+    const newCommentText = event.target.comment.value
 
-    setComments([...comments, comments.length + 1])
-    // console.log(comments)
+    // Imutabilidade
+    setComments([...comments, newCommentText])
+    setNewCommentText('')
+  }
+
+  function handleNewCommentChange() {
+    setNewCommentText(event.target.value)
   }
 
   return (
@@ -68,7 +74,10 @@ export function Post({ author, publishedAt, content }) {
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
         <textarea
-          placeholder='Deixe um comentário'
+          name="comment"
+          placeholder="Deixe um comentário"
+          onChange={handleNewCommentChange}
+          value={newCommentText}
         />
 
         <footer>
@@ -78,7 +87,7 @@ export function Post({ author, publishedAt, content }) {
 
       <div className={styles.commentList}>
         { comments.map(comment => {
-          return <Comment />
+          return <Comment content={comment} />
         }) }
       </div>
     </article>
