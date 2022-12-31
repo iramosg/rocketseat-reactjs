@@ -5,10 +5,6 @@ import { Sidebar } from './components/Sidebar'
 import './global.css'
 import styles from './App.module.css'
 
-// author: { avatar_url: "", name: "", role: "" }
-// publishedAt: Date
-// content: ""
-
 const posts = [
   {
     id: 1,
@@ -21,9 +17,6 @@ const posts = [
       { type: 'paragraph', content: 'Fala galeraa 👋' },
       { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
       { type: 'link', content: 'jane.design/doctorcare'},
-      // { type: 'link', content: '<a href="#">#novoprojeto</a>'},
-      // { type: 'link', content: '<a href="#">#nlw</a>'},
-      // { type: 'link', content: '<a href="#">#rocketseat</a>'},
     ],
     publishedAt: new Date('2022-12-31 20:00:00')
   },
@@ -38,9 +31,6 @@ const posts = [
       { type: 'paragraph', content: 'Fala galeraa 👋' },
       { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
       { type: 'link', content: 'jane.design/doctorcare'},
-      // { type: 'link', content: '<a href="#">#novoprojeto</a>'},
-      // { type: 'link', content: '<a href="#">#nlw</a>'},
-      // { type: 'link', content: '<a href="#">#rocketseat</a>'},
     ],
     publishedAt: new Date('2023-01-01 20:00:00')
   },
@@ -55,9 +45,6 @@ const posts = [
       { type: 'paragraph', content: 'Fala galeraa 👋' },
       { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
       { type: 'link', content: 'jane.design/doctorcare'},
-      // { type: 'link', content: '<a href="#">#novoprojeto</a>'},
-      // { type: 'link', content: '<a href="#">#nlw</a>'},
-      // { type: 'link', content: '<a href="#">#rocketseat</a>'},
     ],
     publishedAt: new Date('2022-02-01 20:00:00')
   },
@@ -74,6 +61,7 @@ export function App() {
           { posts.map(post => {
             return (
               <Post
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
